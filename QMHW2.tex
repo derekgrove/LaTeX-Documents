@@ -1,0 +1,74 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\title{Quantum Homework 2}
+\author{Derek Grove}
+\date{Feb 10th}
+%DeclareMathSizes{12}{14}{11}{11}.
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+
+This is homework for Physics 811, Quantum Mechanics 2, taught by Dr. Ian Lewis at the University of Kansas in the Spring of 2022.\\
+
+1. Consider the Hamiltonian:
+
+
+  \[H_0=\frac{(\mathbf{P-A(Q)})^2}{2M}\]
+
+
+Show that this Hamiltonia obeys the following commutation relation:
+
+\[\frac{i}{\hbar}[H_0,Q_i]=V_i,\text{for }i=1,2,3\]
+\\
+
+2. Assuming we have two particles 1 and 2 with coordinate operators \(\mathbf{Q_1\text{,}Q_2}\), respectively, and momentum operators \(\mathbf{P_1\text{,}P_2}\), respetively. They obey the commutation relations:
+\[[Q_{1,j},P_{1,k}]=i\hbar\delta_{j,k}\text{ ; }[Q_{2,j},P_{2,k}]=i\hbar\delta_{j,k}\]
+and all other commutation relations are zero. Convert to relative and center of mass coordinates:
+
+\end{titlepage}
+
+1) We begin the solution with what the commutation of \(H_0 \text{ and } Q_i\):
+\[[H_0,Q_i]=[\frac{(\mathbf{P-A(Q)})^2}{2M},Q_i]\]
+here we would like to consider only the \(i\)'th component of \textbf{P} and \textbf{Q}.
+\\
+\(\text{\textbf{Note}: I define }  A_i \text{ as }\mathbf{A}(Q_i)\)\\
+\[[\frac{(\mathbf{P-A(Q)})^2}{2M},Q_i] \text{ }\Longrightarrow\text{ } [\frac{({P_i-A_i})^2}{2M},Q_i]\]
+This problem can also be solved by keeping \textbf{P} and \textbf{A(Q)} as 3 vector operators and expand out like I'm about to do in my next steps, but eventually you will have to make the substitution of \(\mathbf{P} = P_i + P_j + P_k\) and you'll have far more terms than you care to work with. So, I continue with just the \(P_i \text{ and } A_i\) terms:
+\((P_i - A_i)^2=P_iP_i - P_iA_i - A_iP_i+A_iA_i\)
+sub this into our commutator:
+
+\[[\frac{({P_i-A_i})^2}{2M},Q_i]=\frac{1}{2M}[P_iP_i - P_iA_i - A_iP_i+A_iA_i, Q_i]\]
+
+distribute our terms via commutation relations of added operators:
+in general:
+
+\[[A+B,C]=[A,C]+[B,C]\]
+
+so we have:
+
+\[=\frac{1}{2M}([P_iP_i,Q_i]-[P_iA_i,Q_i]-[A_iP_i,Q_i]+[A_iA_i,Q_i])\]
+
+from here we do more commutator expansion, this time for the products of commutators:
+
+\[[AB,C]=A[B,C]+[A,C]B\]
+
+so applying this we get a lot of terms:
+
+\[\frac{1}{2M}(P_i[P_i,Q_i]+[P_i,Q_i]P_i - (P_i[A_i,Q_i]+[P_i,Q_i]A_i)-\]
+\[([A_i,Q_i]P_i + A_i[P_i,Q_i]) + [A_i,Q_i]A_i + A_i[A_i,Q_i])\]
+finally, we are in a position to start assessing these commutators. We know these relations:
+\([Q_i,P_i]=i\hbar\delta_{ij}\) ; \([A_i,Q_i]=0\) this is because \(A_i(Q_i)\), and \([Q_i,Q-i]=0\) , operators that are functions of another operator will always commute with that other operator, Schurs lemma has this property embedded in it. So, as much as I don't like leaving work up to the reader, it is up to you to see how the above terms reduce to just:
+\[\frac{1}{2M}(-i\hbar{}P_i-i\hbar{}P_i-i\hbar{}A_i+i\hbar{}A_i)\]
+
+and our solution is:
+
+\[[H_0,Q_i]=\frac{-iP_i}{M}\]
+
+recall, by definition:
+\(V_i=P_i/M\) so  we have \(MV_i=P_i\)
+
+
+\end{document}
